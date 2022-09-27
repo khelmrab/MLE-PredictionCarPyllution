@@ -1,0 +1,56 @@
+networks:
+  my_network_from_compose:
+
+services:
+  api:
+    image: 'khedidja/my_project_fastapi:latest'
+    container_name: my_api_test_from_compose
+    networks:
+      - my_network_from_compose
+    ports:
+      - target: 80
+        published: 80
+        protocol: tcp
+        mode: host
+    healthcheck:
+        test: curl --fail http://localhost || exit 1
+        interval: 10s
+        timeout: 10s
+        retries: 3
+        start_period: 5s
+  authentication:
+    image: 'my_authentication_image:latest'
+    container_name: my_authentication_from_compose
+    depends_on:
+       api:
+        condition: service_healthy
+    networks:
+      - my_network_from_compose
+    environment:
+      - LOG
+    volumes:
+      - '.:/home/work'
+  prediction:
+    image: 'my_prediction_image:latest'
+    container_name: my_prediction_from_compose
+    depends_on:
+       api: 
+        condition: service_healthy
+    networks:
+      - my_network_from_compose
+    environment:
+      - LOG
+    volumes:
+      - '.:/home/work'
+  predictionclassifier:
+    image: 'my_predictionclassifier_image:latest'
+    container_name: my_content_from_compose
+    depends_on:
+       api:
+        condition: service_healthy
+    networks:
+      - my_network_from_compose
+    environment:
+      - LOG
+    volumes:
+      - '.:/home/work'

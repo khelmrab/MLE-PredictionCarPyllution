@@ -1,0 +1,95 @@
+my_api_test_from_compose |   UserWarning,
+my_api_test_from_compose | INFO:     Started server process [8]
+my_api_test_from_compose | INFO:     Waiting for application startup.
+my_api_test_from_compose | INFO:     Application startup complete.
+my_api_test_from_compose | INFO:     Uvicorn running on http://0.0.0.0:80 (Press CTRL+C to quit)
+my_api_test_from_compose | INFO:     127.0.0.1:36116 - "GET / HTTP/1.1" 200 OK
+my_api_test_from_compose | INFO:     172.18.0.4:45810 - "POST /predictionmodelRandomForestClassifier HTTP/1.1" 200 OK
+my_api_test_from_compose | INFO:     172.18.0.3:58290 - "POST /predictionmodelRandomForestRegressor HTTP/1.1" 200 OK
+my_prediction_from_compose | {"Prediction Enedc (g/km)":[523.9783333333332]}
+my_prediction_from_compose |
+my_prediction_from_compose |    ============================
+my_prediction_from_compose |                    Content test
+my_prediction_from_compose |    ============================
+my_prediction_from_compose |
+my_prediction_from_compose |    request done at "/predictionmodelRandomForestRegressor"
+my_prediction_from_compose |    | username=alice
+my_prediction_from_compose |    | password=wonderland
+my_prediction_from_compose |    |data={'W (mm)': 2456, 'At1 (mm)': 1441, 'At2 (mm)': 1434, 'Ft': 2, 'ec (cm3)': 999, 'ep (KW)': 55, 'year': 2015}
+my_prediction_from_compose |
+my_prediction_from_compose |
+my_prediction_from_compose |    ==>  SUCCESS
+my_prediction_from_compose |
+my_prediction_from_compose |
+my_prediction_from_compose exited with code 0
+my_api_test_from_compose | INFO:     172.18.0.5:42012 - "GET /user HTTP/1.1" 401 Unauthorized
+my_api_test_from_compose | INFO:     172.18.0.4:45818 - "POST /predictionmodelRandomForestClassifier HTTP/1.1" 200 OK
+my_content_from_compose | {"Class prediction":6}
+my_content_from_compose |
+my_content_from_compose |         ============================
+my_content_from_compose |                 Content test
+my_content_from_compose |         ============================
+my_content_from_compose |
+my_content_from_compose |         request done at "/predictionmodelRandomForestClassifier"
+my_content_from_compose |         | username=alice
+my_content_from_compose |         | password=wonderland
+my_content_from_compose |         |data={'W (mm)': 2456, 'At1 (mm)': 1441, 'At2 (mm)': 1434, 'Ft': 2, 'ec (cm3)': 999, 'ep (KW)': 55, 'year': 2015}
+my_content_from_compose |
+my_content_from_compose |
+my_content_from_compose |         ==>  SUCCESS
+my_content_from_compose |
+my_content_from_compose |
+my_content_from_compose | {"Class prediction":6}
+my_content_from_compose |
+my_content_from_compose |         ============================
+my_content_from_compose |                 Content test
+my_content_from_compose |         ============================
+my_content_from_compose |
+my_content_from_compose |         request done at "/predictionmodelRandomForestClassifier"
+my_content_from_compose |         | username=alice
+my_content_from_compose |         | password=wonderland
+my_content_from_compose |         |data={'W (mm)': 456, 'At1 (mm)': 441, 'At2 (mm)': 434, 'Ft': 3, 'ec (cm3)': 99, 'ep (KW)': 55, 'year': 2020}
+my_content_from_compose |
+my_content_from_compose |
+my_content_from_compose |         ==>  SUCCESS
+my_content_from_compose |
+my_content_from_compose |
+my_content_from_compose exited with code 0
+my_api_test_from_compose | INFO:     172.18.0.5:42014 - "GET /user HTTP/1.1" 200 OK
+my_api_test_from_compose | INFO:     172.18.0.5:42018 - "GET /user HTTP/1.1" 401 Unauthorized
+my_authentication_from_compose |
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |                Authentication test
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |
+my_authentication_from_compose |        request done at "/login
+my_authentication_from_compose |        | username=alice
+my_authentication_from_compose |        | password=data
+my_authentication_from_compose |
+my_authentication_from_compose |        ==>  FAILURE
+my_authentication_from_compose |
+my_authentication_from_compose |
+my_authentication_from_compose |
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |                Authentication test
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |
+my_authentication_from_compose |        request done at "/login
+my_authentication_from_compose |        | username=bob
+my_authentication_from_compose |        | password=builder
+my_authentication_from_compose |
+my_authentication_from_compose |        ==>  SUCCESS
+my_authentication_from_compose |
+my_authentication_from_compose |
+my_authentication_from_compose |
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |                Authentication test
+my_authentication_from_compose |        ============================
+my_authentication_from_compose |
+my_authentication_from_compose |        request done at "/login
+my_authentication_from_compose |        | username=clementine
+my_authentication_from_compose |        | password=fauxpassword
+my_authentication_from_compose |
+my_authentication_from_compose |        ==>  FAILURE
+my_authentication_from_compose |
+my_authentication_from_compose |
